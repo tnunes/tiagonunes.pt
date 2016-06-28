@@ -1,0 +1,23 @@
+{
+  "name": "tiagonunes.pt",
+  "version": "1.0.0",
+  "author": "Tiago Nunes <me@tiagonunes.pt>",
+  "scripts": {
+    "start": "npm run serve",
+    "build": "gulp build",
+    "serve": "gulp serve",
+    "serve-prod": "gulp serve-prod",
+    "deploy": "gulp deploy"
+  },
+  "devDependencies": {
+    "gulp": "^3.9.1",
+    "gulp-htmlmin": "^2.0.0",
+    "gulp-inline-source": "^2.1.0",
+    "gulp-postcss": "^6.1.1",
+    "gulp-sass": "^2.3.2",
+    "gulp-sass-lint": "^1.2.0",
+    "gulp-serve": "^1.2.0",
+    "gulp-ssh": "^0.6.0",
+    "postcss-cssnext": "^2.7.0"
+  }
+}
