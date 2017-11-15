@@ -9,6 +9,7 @@ var sassLint = require('gulp-sass-lint');
 var postcss = require('gulp-postcss');
 var cssnext = require('postcss-cssnext');
 var GulpSSH = require('gulp-ssh')
+var wbBuild = require('workbox-build')
 
 gulp.task('default', ['serve']);
 gulp.task('serve', ['css', 'css:watch'], serve('src'));
@@ -50,7 +51,15 @@ gulp.task('copy-images', function() {
     .pipe(gulp.dest('dist/img'))
 });
 
-gulp.task('deploy', ['build'], function () {
+gulp.task('bundle-sw', function() {
+  return wbBuild.generateSW({
+    globDirectory: './dist/',
+    swDest: './dist/sw.js',
+    globPatterns: ['**\/*.{html,js,css}']
+  })
+})
+
+gulp.task('deploy', ['build', 'bundle-sw'], function () {
   var sshConfig = require('./.ssh_config');
   var gulpSSH = new GulpSSH({
     sshConfig: sshConfig.connection

@@ -5,6 +5,7 @@
   "scripts": {
     "start": "npm run serve",
     "build": "gulp build",
+    "bundle-sw": "gulp bundle-sw",
     "serve": "gulp serve",
     "serve-prod": "gulp serve-prod",
     "deploy": "gulp deploy"
@@ -18,6 +19,7 @@
     "gulp-sass-lint": "^1.2.0",
     "gulp-serve": "^1.2.0",
     "gulp-ssh": "^0.6.0",
-    "postcss-cssnext": "^2.7.0"
+    "postcss-cssnext": "^2.7.0",
+    "workbox-build": "^2.1.1"
   }
 }
